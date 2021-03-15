@@ -1,0 +1,50 @@
+@import 'mixin';
+body{
+    font-family: $font;
+    font-size:   $bodyFont;
+    line-height: 2em;
+    background:  url($imgBody) $colorWhite repeat-x;margin:0;
+}
+main{
+    width:   960px;
+    margin:0 auto;
+    padding:0 10px;
+    @include break(958px){width: 768px;}
+    @include break(766px){width: 460px;}
+    @include break(459px){width: 300px;}
+}
+
+header{
+    width:inherit;clear:both;text-align:center;padding-top:40px;
+    img{max-width:100%;height:auto;}
+    h1{color:$colorRed;font-weight:100;font-size:4em;line-height:0;}
+    h2{color:$colorWhite;font-weight:900;font-size:2.5em;line-height:0;margin-bottom:70px;}
+    h3{color:$colorGrey;font-weight:400;font-size:2em;line-height:0;margin-bottom:50px;}
+    @include break(958px){
+        h1{font-size: 3em;}
+        h2{font-size: 1.5em;}
+}
+    @include break(766px){
+        h1{font-size: 2em;}
+        h2{font-size: 1em;}
+        h3{font-size: 1.5em;}
+        img{margin-bottom:100px;}
+    }
+    @include break(459px){
+        img			 		{margin-bottom:80px;}
+        h1		{font-size:1.4em;margin-bottom:20px;}
+        h2					{font-size:1.4em;}
+        h3					{color:$colorWhite;font-size:1em;}  
+    }
+}
+#headline{
+    width:100%;height:130px;background:$colorRed;text-align:center;margin:0 auto;
+    h1{color:$colorWhite;font-size:2.5em;font-weight:100;padding-top:50px;}
+    @include break(766px){
+        h1{font-size: 2em;padding-top:50px;}
+    }
+    @include break(459px){
+        h1{font-size:1.5em;padding-top:30px;}
+    }
+}
+

@@ -1,0 +1,24 @@
+#content{
+    @include contentBox();
+    h3 {color:$colorGrey;font-size:2em;font-weight:400;}
+    #products{@include contentGrid(2,20px);float:left;}
+    article  {margin-bottom:40px;
+        img {float:left;margin-right:20px;}
+        h4  {line-height:1em;}
+    }
+    #testimonials{@include contentGrid(2,20px);float:right;}
+    @include break(958px){
+        width:inherit;
+        #products, #testimonials{width:46%;margin:0 2%;}
+        
+    }
+    @include break(766px){
+        #products, #testimonials{@include contentGrid(1,0px);}
+        #products, #testimonials{width:96%;margin:0 2%;float:none;}
+        
+    }
+    @include break(459px){
+        h3{font-size:1.6em;}
+        article img{display: none;}
+    }
+}

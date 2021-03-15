@@ -1,0 +1,42 @@
+figure{
+    @include logoBox($imgLogo);
+    width:400px;
+    height:190px;
+    background-position-x: 0;
+    background-position-y: 50px;
+    float:left;
+    display:block;
+    margin:0;
+    @include break(958px){width: inherit;height:140px;float:none;background-position:center;}
+    @include break(766px){width: inherit;height:140px;float:none;background-position:center;}
+    @include break(459px){background-size:contain;height:100px;}
+}
+nav{
+    @include navBox();float:left;text-align:right;
+    ul{
+        list-style-type:none;margin-top:95px;
+        ///@include break(958px){margin-top:0;}
+        //@include break(459px){width: 300px;}
+        li{
+            display:inline;font-size:0.8em;margin-right:10px;
+            //@include break(958px){font-size:1em;margin:0 10px;}
+            //@include break(766px){font-size:0.8em;margin:0 5px;}
+            //@include break(459px){width: 300px;}
+            a{
+                color:$colorRed;text-decoration:none;letter-spacing:-0.01em;
+                &:hover{color: $colorWhite;}
+            }
+        }
+
+    }
+    @include break(958px){
+        width: inherit;height:50px;float:none;text-align:center;
+        ul{margin-top:0;}
+        li{font-size:1em;margin:0 10px;}
+    }
+    @include break(766px){
+        li{font-size:0.8em;margin:0 5px;}
+    }
+    @include break(459px){
+        margin-bottom:40px ! important;}
+}

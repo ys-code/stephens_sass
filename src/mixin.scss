@@ -1,0 +1,61 @@
+
+@mixin logoBox($img,) {
+    background-image: url($img);
+    background-repeat:no-repeat;
+  
+}
+@mixin navBox() {
+    width:540px;height:190px;
+    
+}
+@mixin headerBox(){
+    width:940px;
+}
+
+@mixin contentGrid($column,$margin){    
+    @if $column > 1{
+    width:((940px - (($column - 1) * $margin)) / $column);
+    }
+}
+
+@mixin mediaImages($a,$x:0,$y:0) {
+    background-image:url($a);
+    background-position-x:$x;
+    background-position-y:$y;
+}
+
+@mixin contentBox() {
+    width: 940px;
+    margin:20px auto;
+    
+}
+@mixin footerBox() {
+    width: 100%;
+    height:120px;
+}
+
+
+//meida query
+$browser-size:4595px,767px,959px;
+@mixin break($size) {
+    @if $size == 459px{
+    //@if ($size < nth($browser-size,1)){
+        @media(max-width:nth($browser-size,1)){
+            @content;
+        }
+    }
+    @if $size == 766px{
+    //@if (($size > nth($browser-size,1)) and ($size < nth($browser-size,2))){
+        //@media(min-width:nth($browser-size,1)) and (max-width:nth($browser-size,2)){
+         @media(max-width:nth($browser-size,2)){
+            @content;
+        }
+    }
+    @if $size == 958px{
+    //@if (($size > nth($browser-size,2)) and ($size < nth($browser-size,3))){
+        //@media(min-width:nth($browser-size,2)) and (max-width:nth($browser-size,3)){
+            @media(max-width:nth($browser-size,3)){
+            @content;
+        }
+    }
+}
